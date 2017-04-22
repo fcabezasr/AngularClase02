@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="clase2"><!-- data-ng-app Cuando quieres validar un script -->
+<head>
+	<meta charset="UTF-8">
+	<title>Clase de Controladores</title>
+
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+	
+	<div ng-controller="saludo">
+		<input type="text" ng-model="nombre">
+		<h1>Hola {{ nombre | uppercase }}</h1> <!-- currency -->
+	</div>
+
+	<div ng-controller="costos">
+		<input type="number" ng-model="productos1" ng-change="sumar()"><br>		
+		<input type="number" ng-model="productos2" ng-change="sumar()"><br>
+		<button ng-click="sumar()">Sumar</button>
+		<h2>El total es {{ total | currency}}</h2> <!-- Currency por defecto muestra la moneda 'Dólar', para cambiar de moneda se pone currency: 'S/.' -->
+		<h2>El total es {{ total | currency: 'S/.' }}</h2>
+	</div>	
+
+</body>
+</html>
